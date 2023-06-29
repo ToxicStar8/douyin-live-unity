@@ -1,0 +1,2 @@
+# DouYinLiveFetchToUnity
+使用Unity实现抖音直播模拟websocket进行数据采集
