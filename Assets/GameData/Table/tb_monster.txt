@@ -1,0 +1,5 @@
+int^string^string^string^int^int^float
+id^name^asset^desc^hp^speed^factor_scale
+^怪物名^怪物资源^怪物说明^血量基础值^速度基础值^被影响的系数比（百分比）
+1^章鱼人^Monster_01.prefab^著名邪神的小弟中弟，只会追着正常人跑。^10^4^100,0
+2^灯笼人^Monster_02.prefab^可别被它头上的灯笼骗咯，那可不是眼睛。^1^8^70,0
