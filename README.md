@@ -2,7 +2,7 @@
 基于<a href='https://github.com/ToxicStar8/BFramework-Ex'>BFramework-Ex框架</a>的抖音直播信息采集工具，删除了热更部分
 
 # 打包流程
-1.切换到对应平台后点击BFramework/Build AssetBundles
+1.切换到对应平台后点击BFramework/Build AssetBundles</br>
 2.将打好的AB包全部放到StreamingAssets</br>
 3.打包即可</br>
 
