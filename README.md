@@ -7,12 +7,13 @@
 3.打包即可</br>
 
 # 常见错误
-一般都是打包环节出了问题，如下操作</br>
-1.打包</br>
-2.HybridCLR-CompileDLL-ActiveBuildTarget</br>
-3.BFramework/Build AssetBundles</br>
-4.将打好的AB包全部放到StreamingAssets</br>
-5.再打包</br>
+黑屏、报Null、元数据不匹配等，一般都是打包环节出了问题，如下操作</br>
+1.HybridCLR-Setting-Hot Update Assemblies-新增输入Assembly-CSharp-保存</br>
+2.打包(因为ab包存放包体内部所以需要先打包，如果ab包存放云端可以忽略)</br>
+3.HybridCLR-CompileDLL-ActiveBuildTarget</br>
+4.BFramework/Build AssetBundles</br>
+5.将打好的AB包全部放到StreamingAssets</br>
+6.再打包</br>
 
 
 # 项目移植
