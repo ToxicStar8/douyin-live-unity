@@ -1,18 +1,5 @@
 {
   "dependencies": {
-    "com.code-philosophy.hybridclr": {
-      "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "be113567ba3e04bb4f400e5c1e6b4b9cdecb63f5"
-    },
-    "com.sharelib.logviewer": {
-      "version": "file:Unity-Logs-Viewer",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.unity.2d.pixel-perfect": {
       "version": "5.0.3",
       "depth": 0,

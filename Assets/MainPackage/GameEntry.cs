@@ -3,6 +3,7 @@
  * 游戏入口
  * 创建时间：2023/06/16 16:54:23
  *********************************************/
+using GameData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -98,46 +99,9 @@ namespace MainPackage
 
             yield return new WaitUntil(() => DowloadManager.IsDowloadEnd);
 
-            Log(E_Log.Framework, "热更代码", "启动中");
-            Assembly ass = null;
-            if (!IsEditorMode || IsRunABPackage)
-            {
-                Log(E_Log.Framework, "AB包存放路径为", DowloadManager.SavePath);
-                //下载完资源后 加载热更Dll和AotDll的AB包
-                var abPackage = AssetBundle.LoadFromFile(DowloadManager.SavePath + "hotfix");
-                //加载DLL
-                var assemblyData = abPackage.LoadAsset<TextAsset>(_hotfixDllName);
-                ass = Assembly.Load(assemblyData.bytes);
-                Log(E_Log.Framework, "热更代码", "DLL加载完毕");
-                //补充元数据
-                foreach (var assetName in abPackage.GetAllAssetNames())
-                {
-                    if (assetName.EndsWith(".bytes") && assetName != _hotfixDllName)
-                    {
-                        var textAsset = abPackage.LoadAsset<TextAsset>(assetName);
-                        HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(textAsset.bytes, HybridCLR.HomologousImageMode.Consistent);
-                    }
-                }
-                Log(E_Log.Framework, "元数据", "补充完毕");
-                //原生加载热更
-                var hotfixObj = abPackage.LoadAsset<GameObject>("HotUpdatePrefab.prefab");
-                GameObject hotfixPrefab = Instantiate(hotfixObj, transform);
-                hotfixPrefab.name = "[Hotfix]";
-
-                //反射加载
-                //Type entryType = ass.GetType("GameData.HotUpdateMain");
-                //var hotfixPrefab = new GameObject();
-                //hotfixPrefab.AddComponent(entryType);
-                //hotfixPrefab.name = "[Hotfix]";
-            }
-#if UNITY_EDITOR
-            else
-            {
-                var hotfixObj = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Hotfix/HotUpdatePrefab.Prefab");
-                GameObject hotfixPrefab = Instantiate(hotfixObj, transform);
-                hotfixPrefab.name = "[Hotfix]";
-            }
-#endif
+            GameObject hotfixPrefab = Instantiate(new GameObject(), transform);
+            hotfixPrefab.name = "[Hotfix]";
+            hotfixPrefab.AddComponent<HotUpdateMain>();
         }
 
         /// <summary>

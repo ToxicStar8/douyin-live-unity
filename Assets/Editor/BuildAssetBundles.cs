@@ -50,7 +50,7 @@ namespace Framework
             }
             Directory.CreateDirectory(ABOutPath);
             //3.处理热更DLL和AOTDLL
-            MoveHotfixDllAndAotDll();
+            //MoveHotfixDllAndAotDll();
             //4.设置打包名通过路径
             SetABNameByPath();
             //5.存储依赖关系表（如果用Unity自带的依赖管理可以忽略）
