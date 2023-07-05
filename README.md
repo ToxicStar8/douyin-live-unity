@@ -7,4 +7,4 @@
 3.打包即可</br>
 
 # 项目移植
-查看UIMainMenu(UI)、UIMainMenu_MsgUnit(UI)、SocketRoutine(Socket)、DY(Proto)四个脚本文件，将代码用自己的方式实现到自己项目里即可</br>
+查看UIMainMenu(UI)、UIMainMenu_MsgUnit(UI)、SocketRoutine(Socket)、DY(Proto)四个脚本文件，将前三个代码用自己的方式实现到自己项目里，第四个直接丢入项目即可</br>
