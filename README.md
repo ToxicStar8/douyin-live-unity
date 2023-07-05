@@ -1,7 +1,7 @@
 # 简介
 基于<a href='https://github.com/ToxicStar8/BFramework-Ex'>BFramework-Ex框架</a>的抖音直播信息采集工具
 
-# 操作流程
+# 打包流程
 1.需要先安装Git和C++环境</br>
 2.HybridCLR-Install-安装</br>
 3.打包即可</br>
