@@ -16,4 +16,4 @@
 
 
 # 项目移植
-查看UIMainMenu、UIMainMenu_MsgUnit(UI)、SocketRoutine(Socket)、DY(Proto)四个脚本文件，将代码用自己的方式实现到自己项目里即可</br>
+查看UIMainMenu(UI)、UIMainMenu_MsgUnit(UI)、SocketRoutine(Socket)、DY(Proto)四个脚本文件，将代码用自己的方式实现到自己项目里即可</br>
