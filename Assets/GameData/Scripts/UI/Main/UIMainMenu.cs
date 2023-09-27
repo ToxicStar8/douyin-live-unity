@@ -47,17 +47,10 @@ namespace GameData
                     var ttwid = Regex.Match(cookie, @"ttwid=\S+;").Value;
                     Debug.Log(ttwid);
 
-                    //正则匹配 删除额外文本
-                    var match = Regex.Match(jsonData, @"<script id=""RENDER_DATA"" type=""application/json"">\S+</script>");
-                    var str = match.Value.Replace(@"<script id=""RENDER_DATA"" type=""application/json"">", "").Replace("</script>", "");
-                    //url解码
-                    string result = UnityWebRequest.UnEscapeURL(str);
-                    //这里是个Json数据 转化为JsonData格式
-                    var res = JsonMapper.ToObject(result);
-                    //获取直播房间的Id和标题
-                    var roomStore = res["app"]["initialState"]["roomStore"];
-                    _liveRoomId = roomStore["roomInfo"]["roomId"].ToString();
-                    _liveRoomTitle = roomStore["roomInfo"]["room"]["title"].ToString();
+                    //正则匹配
+                    var match = Regex.Match(jsonData, @"roomId\\"":\\""(\d+)\\"",");
+                    //获取直播房间的Id
+                    _liveRoomId = match.Groups[1].ToString();
                     FnAddMsg(new Message()
                     {
                         Method = $"[获取直播间信息成功][RoomId={_liveRoomId}][Room标题={_liveRoomTitle}]",
