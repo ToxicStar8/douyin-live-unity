@@ -107,34 +107,34 @@ namespace GameData
 
         private void Update()
         {
-            //===== SD WS =====
-            //if (Input.GetKeyDown(KeyCode.A))
-            //{
-            //    //ws://192.168.1.75:7860/queue/join
-            //    SocketConnect("ws://192.168.1.75:7860/queue/join", new Action(()=> {
-            //        SocketSendMsg("{\"fn_index\":746,\"session_hash\":\"ij62sfwiza\"}");
-            //    }));
-            //}
-            //if (Input.GetKeyDown(KeyCode.S))
-            //{
-            //    var imgBase64 = Base64Util.FileToBase64("C:/Users/admin/Desktop/20230626-101030.jpg", "image/jpeg");
-            //    var audioBase64 = Base64Util.FileToBase64("C:/Users/admin/Desktop/英语.mp3", "audio/mpeg");
-            //    StringBuilder sb = new StringBuilder();
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                HttpClearHeader();
+                HttpAddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+                HttpAddHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36");
 
-            //    //{\"fn_index\":746,\"data\":[\" base64图片数据 \",{\"data\":\" base64视频数据 \",\"name\":\"随便写名.mp3\"},\"crop\",false,false,2,256,0],\"event_data\":null,\"session_hash\":\"ij62sfwiza\"}
+                HttpRoutine routine = null;
+                routine = HttpGet("https://www.tiktok.com/@sanma238/live", (jsonData) =>
+                {
+                    //正则匹配
+                    var match = Regex.Match(jsonData, @"roomID"":""(\d+)""");
 
-            //    sb.Append("{\"fn_index\":746,\"data\":[\"");
-            //    sb.Append(imgBase64.HtmlBase64);
-            //    sb.Append("\",{\"data\":\" ");
-            //    sb.Append(audioBase64.HtmlBase64);
-            //    sb.Append("\",\"name\":\"英语.mp3\"},\"crop\",false,false,2,256,0],\"event_data\":null,\"session_hash\":\"ij62sfwiza\"}");
+                    //获取直播房间的Id
+                    var roomId = match.Groups[1].ToString();
 
-            //    SocketSendMsg(sb.ToString());
-            //}
-            //if (Input.GetKeyDown(KeyCode.D))
-            //{
-            //    SocketClose();
-            //}
+
+                    var www = routine.GetWWW();
+                    //获取Cookie
+                    var cookie = www.GetResponseHeader("Set-Cookie");
+
+                    SocketClearHeader();
+                    //连接webSocket
+                    SocketConnect($"wss://webcast16-ws-useast5.us.tiktok.com/webcast/im/push/?aid=1988&app_language=zh-Hans&app_name=tiktok_web&browser_language=zh-CN&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F114.0.5735.289%20Safari%2F537.36&compress=gzip&cookie_enabled=true&cursor=1695782654316_7283331040054141577_1_1_0_0&debug=false&device_platform=web&heartbeatDuration=0&host=https%3A%2F%2Fwebcast.us.tiktok.com&identity=audience&imprp=u4b-7CnGyKSSI&internal_ext=fetch_time%3A1695782654316%7Cstart_time%3A1695782640256%7Cack_ids%3A7283330975113677611_2cc%2C7283330978453621509_2ce%2C7283330981062200106_2d0%2C7283330986615524101_2d2%2C7283330989174409989_2d2%2C7283330993376496390_2d4%2C7283330992858745605_2d4%2C7283330998685305605_2d6%2C7283331004545321771_2d8%2C7283330999999417090_2da%2C7283331012607822634_2dc%2C7283331008841337606_2dc%2C7283331013463640838_2de%2C7283331027602213637_2e4%2C%7Cflag%3A1%7Cseq%3A1%7Cnext_cursor%3A1695782654316_7283331040054141577_1_1_0_0%7Cwss_info%3A0-1695782654316-0-0&live_id=12&room_id={roomId}&screen_height=1080&screen_width=1920&tz_name=Asia%2FShanghai&update_version_code=1.3.0&version_code=270000&webcast_sdk_version=1.3.0", new Action(() =>
+                    {
+
+                    }));
+                });
+            }
         }
 
         public override void OnBeforDestroy()
