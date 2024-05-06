@@ -1,7 +1,0 @@
-int^string^string^string^int^int^string
-id^name^asset^desc^hp^speed^sprite
-^角色名^角色预制体^角色说明^血量基础值^速度基础值^角色默认显示图片
-1^原皮小龙^Player.prefab^绿色的小恐龙，很常见。^3^10^Dino_Green_Idle_01
-2^大地小龙^^^5^8^Dino_Yellow_Idle_01
-3^冰霜小龙^^^2^12^Dino_Blue_Idle_01
-4^红烧小龙^^^4^9^Dino_Red_Idle_01

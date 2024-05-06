@@ -1,9 +1,0 @@
-int^string^string^string^int^int^int^int
-id^name^asset^desc^damage^speed^through^type
-^武器名^武器资源^武器说明^伤害基础值^射速基础值^穿透基础值^武器类型
-1^普通子弹^Bullet_01.prefab^普普通通的左轮子弹^3^25^3^0
-2^弹珠^Bullet_02.prefab^小时候大家都爱玩的弹珠^1^50^7^1
-3^锤子^Bullet_03.prefab^鲁智深倒拔垂杨柳^2^10^99^3
-4^乱飞子弹^Bullet_01.prefab^普普通通的左轮子弹^3^25^3^2
-5^地雷^Generate_01.prefab^普普通通地雷^5^0^1^4
-6^金属地刺^Bullet_04.prefab^普普通通金属做的地刺^7^0^1^5

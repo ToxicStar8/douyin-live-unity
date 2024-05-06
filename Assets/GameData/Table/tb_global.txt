@@ -1,4 +1,0 @@
-int^string
-id^map_max
-^层，行，列
-1^4,100,100
