@@ -5,7 +5,8 @@
 
 ## 使用流程
 1. 下载2022任意子版本Unity都可。
-2. 打开Scene_Main运行即可。
+2. 打开Scene_Main，运行后填入需要监听的直播间Id即可。
+![效果如图](image.png)
 
 ## 项目移植
 查看UIMainMenu(UI)、UIMainMenu_MsgUnit(UI)、SocketRoutine(Socket)、DY(Proto)四个脚本文件，将前三个代码用自己的方式实现到自己项目里，第四个直接丢入项目即可
