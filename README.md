@@ -1,5 +1,5 @@
 ## 简介
-使用Unity实现的抖音直播弹幕礼物采集工具，实现了抖音弹幕抓取，礼物抓取等。</br>
+使用Unity实现的抖音直播模拟websocket采集弹幕礼物工具，实现了抖音弹幕抓取，礼物抓取等。</br>
 欢迎参观我的<a href='https://toxicstar.top/'>个人博客</a>。</br>
 欢迎使用我的Unity游戏开发框架，<a href='https://github.com/ToxicStar8/BFramework-Ex'>BFramework-Ex</a>。</br>
 
